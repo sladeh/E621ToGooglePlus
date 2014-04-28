@@ -1,4 +1,4 @@
-GooglePlusToE621
+E621ToGooglePlus
 ================
 
 A Google Chrome extension to share E621 images directly to Google Plus.
