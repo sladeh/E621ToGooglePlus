@@ -1,0 +1,43 @@
+{
+	"manifest_version": 2,
+
+	"name": "Share e621 to G+",
+	"description": "This extension will share your e621 direct image links to Google+",
+	"version": "0.0.5",
+	"icons": {
+      "128": "icon.jpg",
+      "16": "icon.jpg",
+      "19": "icon.jpg",
+      "32": "icon.jpg",
+      "48": "icon.jpg"
+   },
+
+	"permissions": [
+    	"unlimitedStorage",
+    	"https://plus.google.com/*"
+	],
+	"background": {
+    "scripts": [
+    	"jquery.js", 
+		"/jsapi/jsapi_helper.js",
+		"/jsapi/jsapi_abstract_database.js",
+		"/jsapi/jsapi_database.js",
+		"/jsapi/jsapi_for_google_plus.js",
+		"/content_script_api_bridge.js",
+		"/settings.js",
+		"/background_controller.js"
+    ]
+  },
+	"web_accessible_resources": [
+	    "ajax-loader.gif"
+  ],
+	"content_scripts": [
+		{
+			"matches": ["https://e621.net/post/show/*"],
+			"js": [
+				"jquery.js", 
+				"app.js"
+			]
+		}
+	]
+}
